@@ -1,13 +1,11 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+var webpack = require('webpack');
 
 module.exports = {
   mode: 'development',
-  entry: "./src/index.js", // the file where you call ReactDOM.render()
-  output: {
-    filename: "bundle.[hash].js",
-    path: path.resolve(__dirname, "dist"),
-  },
+  entry: "./src/index.tsx",
+
   devServer: {
     static: {
       directory: path.join(__dirname, 'public'),
@@ -24,17 +22,23 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html", // inserts the bundled JS into this html file.
     }),
+    new webpack.ProvidePlugin({
+      React: 'react',
+    })    
   ],
   resolve: {  // resolve based on the order of the array, with priority highest at the start
-    modules: [__dirname, "src", "node_modules"], 
-    extensions: ["*", ".js", ".jsx", ".tsx", ".ts"],
+    modules: [__dirname, "src", "node_modules"],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
-        loader: require.resolve("babel-loader"), // all jsx files (i.e. React files) will go through Babel to convert to plain JS
+        resolve: {
+          extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+        },
+        use: 'ts-loader',
       },
       {
         test: /\.css$/,
@@ -45,5 +49,9 @@ module.exports = {
         use: ["file-loader"],
       }, 
     ],
+  },
+  output: {
+    filename: "bundle.[hash].js",
+    path: path.resolve(__dirname, "dist"),
   },
 };

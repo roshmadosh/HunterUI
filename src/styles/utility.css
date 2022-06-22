@@ -1,0 +1,13 @@
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-error {
+  border: .3rem solid red;
+}
+
+.hidden {
+  visibility: hidden;
+}
