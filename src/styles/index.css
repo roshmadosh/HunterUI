@@ -24,9 +24,9 @@ body {
   min-height: 100vh;
   display: flex;
   flex-flow: column;
+  background: var(--background-color);
 }
 #main-container {
-  background: var(--dark-color);
   height: 100%;
 }
 
@@ -53,6 +53,8 @@ body {
 
 .app-toast-inner > p, span {
   color: white;
+  font-weight: 600;
+  letter-spacing: .2ch;
   font-size: 1.6rem;
 }
 

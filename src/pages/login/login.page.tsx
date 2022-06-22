@@ -5,7 +5,7 @@ import { ToastContext } from '../../contexts/useToastContext';
 
 
 
-export default function LoginPage() {
+export function LoginPage() {
   const [username, setUsername] = useState({ value: '', valid: true });
   const [password, setPassword] = useState({ value: '', valid: true });
 

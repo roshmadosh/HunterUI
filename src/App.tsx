@@ -1,5 +1,5 @@
 import Navbar from "./navbar";
-import { LoginPage } from "./pages";
+import { Outlet } from "react-router-dom";
 import { useToastContext } from "./contexts/useToastContext";
 
 
@@ -11,7 +11,7 @@ const App = () => {
     <Navbar />
     <ToastProvider>
       <main id="main-container">
-        <LoginPage />
+        <Outlet />
       </main>
     </ToastProvider>
     <Toast />

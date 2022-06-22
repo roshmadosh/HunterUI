@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Navbar() {
+  const navigate = useNavigate();
   return (
     <nav id="navbar-container">
-      <div id="logo-container">
+      <div id="logo-container" onClick={() => navigate('login')}>
 
       </div>
       <div id="navbar-rhs-container">

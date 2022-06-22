@@ -35,11 +35,11 @@
 
 #create-account-link {
   margin-top: .5em;
-  color: var(--light-color);
+  color: #222;
 }
 
 #create-account-link:hover {
-  color: var(--highlight-color);
+  color: var(--primary-color);
   cursor: pointer;
 }
 
