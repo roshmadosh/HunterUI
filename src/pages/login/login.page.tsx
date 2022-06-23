@@ -19,13 +19,12 @@ export function LoginPage() {
     e.preventDefault();
     const rememberMe = checkboxRef.current!.checked;
 
+    // TODO   resp.data has user data. Navigate to feed page with this data.
     const resp = await login({
       username: username.value,
       password: password.value,
       rememberMe
     });
-
-    console.log(resp);
 
     if (!resp.apiCalled) {
       dispatchToastContent({ type: 'error', message: resp.message });

@@ -16,7 +16,7 @@ module.exports = {
     hot: true,  // hot reloads
     open: true, // opens browser on webpack start
     proxy: {
-      '/api': `http://localhost:${process.env.API_PORT}`, // allows requests to /api/... to map to localhost:5000/api/...
+      '/api': `http://localhost:5000`, // allows requests to /api/... to map to localhost:5000/api/...
     },
   },
   plugins: [
@@ -25,7 +25,8 @@ module.exports = {
     }),
     new webpack.ProvidePlugin({
       React: 'react',
-    })    
+    }), 
+        
   ],
   resolve: {  // resolve based on the order of the array, with priority highest at the start
     modules: [__dirname, "src", "node_modules"],
