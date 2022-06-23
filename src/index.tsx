@@ -3,11 +3,15 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import App from "./App";
+import { authenticate } from './api';
 import { 
   LoginPage,
   NotFoundPage, 
 } from './pages';
 
+
+authenticate();
+  
 
 ReactDOM.render(
   <BrowserRouter>

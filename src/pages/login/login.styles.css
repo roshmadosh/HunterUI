@@ -20,13 +20,18 @@
   gap: 2em;
 }
 
+#remember-me-container {
+  display: flex;
+  align-items: center;
+}
+
 .login-form-field {
   width: 35ch;
 }
 
 
 #button-section {
-  margin-top: 2em;
+  margin-top: 1em;
 }
 
 #login-button {

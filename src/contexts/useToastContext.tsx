@@ -6,15 +6,14 @@ type ToastContent = {
   message: string
 } | undefined;
 
+type ToastProviderProps = {
+  children: React.ReactNode,
+}
+
 type ToastContextType = {
   toastContent?: ToastContent,
   dispatchToastContent: React.Dispatch<React.SetStateAction<ToastContent>>,
 };
-
-
-type ToastProviderProps = {
-  children: React.ReactNode,
-}
 
 export const ToastContext = createContext<ToastContextType | undefined>(undefined);
 
